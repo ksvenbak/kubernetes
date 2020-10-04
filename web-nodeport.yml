@@ -1,0 +1,13 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: hello-nodeport
+  labels:
+    app: docker-k8s-springboot
+spec:
+  type: NodePort
+  ports:
+    - port: 8080
+      nodePort: 31000
+  selector:
+    app: docker-k8s-springboot
